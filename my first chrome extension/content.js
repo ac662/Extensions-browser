@@ -6,8 +6,8 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "clicked_browser_action" ) {
 		
-	  //logging the url and storing in firstHref. javascript version: https://stackoverflow.com/questions/1034621/get-current-url-in-web-browser
-      var firstHref = $("a[href^='http']").eq(0).attr("href");
+	  //logging the url and storing in firstHref
+	  var firstHref = window.location.href;
       console.log(firstHref);
 	  
 	  //sending a message with the url to background.js 
